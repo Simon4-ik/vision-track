@@ -1,0 +1,8 @@
+task: person_detection_transfer_learning
+base_model: yolov8n.pt
+dataset_yaml: data/coco_dataset/data.yaml
+epochs: 10
+imgsz: 640
+batch: 16
+lr0: 0.001
+patience: 10

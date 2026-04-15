@@ -1,0 +1,72 @@
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+
+# Claude Code
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data — large files; use download links from README (folders kept via .gitkeep)
+data/raw_videos/*
+!data/raw_videos/.gitkeep
+!data/raw_videos/853889-hd_1920_1080_25fps*
+data/raw_images/*
+!data/raw_images/.gitkeep
+# Keep coco_dataset in repo for audit reproducibility
+!data/coco_dataset/**
+
+# Model weights (large; download or train locally)
+*.pt
+*.onnx
+*.pth
+*.weights
+models/checkpoints/best.pt
+models/checkpoints/best_quantized.onnx
+models/training_runs/
+# Allow checkpoints in repo (audit: models not too heavy)
+!models/checkpoints/best.pt
+!models/checkpoints/best_quantized.onnx
+!models/checkpoints/config.yaml
+
+# Logs (folder kept via .gitkeep; app_errors.log excluded)
+logs/*
+*.log
+!logs/.gitkeep
+!logs/app_errors.log
+
+# Reports (optional: ignore generated demos if large)
+# reports/demo_results/*.mp4
+# reports/demo_results/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.temp
+.cache/

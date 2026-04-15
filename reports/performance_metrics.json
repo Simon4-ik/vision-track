@@ -1,0 +1,7 @@
+{
+  "detection_precision": 0.88,
+  "detection_recall": 0.85,
+  "f1_score": 0.865,
+  "average_fps_per_stream": 18.113391550343458,
+  "average_latency_ms": 172.0430583334039
+}

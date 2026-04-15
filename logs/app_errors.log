@@ -1,0 +1,79 @@
+2026-03-31 16:26:33,489 [ERROR] Failed loading model models/checkpoints/best.pt: [Errno 2] No such file or directory: 'models/checkpoints/best.pt'
+Traceback (most recent call last):
+  File "/Users/mnozimjo/Desktop/vision-track/app.py", line 174, in main
+    detector = get_torch_detector(model_path, conf_threshold, iou_threshold, device)
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 281, in __call__
+    return self._get_or_create_cached_value(args, kwargs, spinner_message)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 326, in _get_or_create_cached_value
+    return self._handle_cache_miss(cache, value_key, func_args, func_kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/streamlit/runtime/caching/cache_utils.py", line 385, in _handle_cache_miss
+    computed_value = self._info.func(*func_args, **func_kwargs)
+  File "/Users/mnozimjo/Desktop/vision-track/app.py", line 49, in get_torch_detector
+    return YoloPersonDetector(
+        model_path=model_path,
+    ...<2 lines>...
+        device=device,
+    )
+  File "/Users/mnozimjo/Desktop/vision-track/models/yolo_person_detection.py", line 27, in __init__
+    self.model = YOLO(model_path)
+                 ~~~~^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/models/yolo/model.py", line 76, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/engine/model.py", line 144, in __init__
+    self._load(model, task=task)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/engine/model.py", line 283, in _load
+    self.model, self.ckpt = load_checkpoint(weights)
+                            ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/nn/tasks.py", line 1515, in load_checkpoint
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ~~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/nn/tasks.py", line 1463, in torch_safe_load
+    ckpt = torch_load(file, map_location="cpu")
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/ultralytics/utils/patches.py", line 178, in torch_load
+    return torch.load(*args, **kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/Users/mnozimjo/Desktop/vision-track/.venv/lib/python3.13/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ~~~~^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'models/checkpoints/best.pt'
+2026-04-15 12:57:06,469 [ERROR] Runtime multi-stream error: name 'fps' is not defined
+Traceback (most recent call last):
+  File "/Users/mnozimjo/Downloads/vision-track/app.py", line 265, in main
+    metric_slots[stream_id]["fps"].metric("FPS", f"{fps:.2f}")
+NameError: name 'fps' is not defined
+2026-04-15 14:14:16,058 [ERROR] Failed opening source data/raw_videos/stream_3.mp4: Failed to open video source: data/raw_videos/stream_3.mp4
+Traceback (most recent call last):
+  File "/Users/mnozimjo/Downloads/vision-track/app.py", line 195, in main
+    captures[cfg["stream_id"]] = open_video_stream(source_input)
+  File "/Users/mnozimjo/Downloads/vision-track/utils/data_loader.py", line 14, in open_video_stream
+    raise RuntimeError(f"Failed to open video source: {source}")
+RuntimeError: Failed to open video source: data/raw_videos/stream_3.mp4
+2026-04-15 19:48:11,081 [ERROR] Runtime multi-stream error: 'StreamStats' object has no attribute 'record_inference_time'
+Traceback (most recent call last):
+  File "C:\Users\Pilotech\Downloads\vision-track-main\vision-track\app.py", line 280, in main
+    stream_stats.record_inference_time(inference_elapsed)
+AttributeError: 'StreamStats' object has no attribute 'record_inference_time'
+2026-04-15 20:00:21,197 [ERROR] Runtime multi-stream error: 'StreamStats' object has no attribute 'record_inference_time'
+Traceback (most recent call last):
+  File "C:\Users\Pilotech\Downloads\vision-track-main\vision-track\app.py", line 280, in main
+    stream_stats.record_inference_time(inference_elapsed)
+AttributeError: 'StreamStats' object has no attribute 'record_inference_time'
+2026-04-15 20:28:46,400 [ERROR] Runtime multi-stream error: 'StreamStats' object has no attribute 'record_inference_time'
+Traceback (most recent call last):
+  File "C:\Users\Pilotech\Downloads\vision-track-main\vision-track\app.py", line 308, in main
+    stream_stats.record_inference_time(inference_elapsed)
+AttributeError: 'StreamStats' object has no attribute 'record_inference_time'
+2026-04-15 20:29:33,050 [ERROR] Runtime multi-stream error: 'StreamStats' object has no attribute 'record_inference_time'
+Traceback (most recent call last):
+  File "C:\Users\Pilotech\Downloads\vision-track-main\vision-track\app.py", line 308, in main
+    stream_stats.record_inference_time(inference_elapsed)
+AttributeError: 'StreamStats' object has no attribute 'record_inference_time'
